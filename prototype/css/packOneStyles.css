@@ -2,10 +2,6 @@
 	font-family: "Century Gothic", Verdana, Arial;
 }
 
-div{
-	/*border: 2px solid green;*/
-}
-
 #login-form{
 	padding: 20px 15px 20px 15px;
 	border: 1px solid green;
@@ -24,44 +20,17 @@ div{
 	padding: 5px;
 	margin: 5px;
 }
-#side-menu{
-	margin-top: 150px;
-	float: left;
-	background-color: #045a92;
-	width: 100px;
-	position: absolute;
-	padding: 0px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
+
 #submit-btn{
 	margin-top: 10px !important;
 	margin-bottom: 25px !important;
 	background-color: #045a92;
 	color: #EEEEEE;
-	border-radius: 0px;
-	border: none;
+	border-radius: 0px !important;
+	border: none !important;
 	width: 100px;
 
 }
 #submit-btn:hover{
 	background-color: #046aae;
-}
-
-
-.master-header{
-	border-bottom: 10px solid #052e48;
-	height: 100px;
-}
-
-.master-content{
-	border-top: 5px solid #1392E2;
-}
-
-.side-menu-item{
-	border-radius: 50%;
-	background-color: #1392E2;
-	margin: 10px 15px 10px 15px;
-	width: 70px;
-	height: 70px;
 }
