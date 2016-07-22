@@ -21,16 +21,51 @@
 	margin: 5px;
 }
 
-#submit-btn{
+.cmc-btn{
 	margin-top: 10px !important;
 	margin-bottom: 25px !important;
 	background-color: #045a92;
 	color: #EEEEEE;
 	border-radius: 0px !important;
-	border: none !important;
-	width: 100px;
-
+	border: none !important;	
+	padding: 10px;
 }
-#submit-btn:hover{
+.cmc-btn:hover{
 	background-color: #046aae;
+	color: white;
 }
+
+/******* ESTILOS DE BÚSQUEDA DE CLIENTES *********/
+
+tbody>tr:hover{
+	background-color: #2E8DCD !important;
+	color: white;
+	cursor: pointer;
+} 
+.btn-panel{
+	margin-right: 20px;
+}
+.seccion-info{
+	border: 2px solid darkblue;
+	background-color: #EEEEEE;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 5px 0px 25px 0px;
+	border-radius: 15px;
+}
+
+.titulo-seccion-info{
+	background-color: #045a92;
+	margin: 0px;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.contenido-seccion-info{
+	padding: 20px 15px 20px 15px;
+}
+
