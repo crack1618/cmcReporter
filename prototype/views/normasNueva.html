@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/masterPageStyles.css" rel="stylesheet">
+    <link href="../css/packOneStyles.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
+    <script type="text/javascript">
+    	$(function(){
+    		/*$("#side-menu").animate({width:'toggle'},350);*/
+    		$("#side-menu-container").mouseenter(function(){
+    			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-left");
+    		}).mouseleave(function(){
+    			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
+    		});
+    	});
+    </script>
+	<title>CmcReporter</title>
+</head>
+<body>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div  id="master-header" class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<div>Bienvenido <label>Arturo Vazquez A</label></div>
+				<div><label>17 de Junio del 2017</label></div>
+				<div>Cliente: <label>Comercializadora del Sur S.A. de C.V.</label> </div>
+				<div>Sucursal: <label>Av. Xalapa Esq. Ruiz Cortinez</label> </div>
+				<div>Año: <label>2017</label> </div>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+				<div style="text-align: right;"><b>Home</b>|<a href="../index.html">Cerrar Sesion</a></div>
+				<div><img src="../img/logo-min.png"></div>
+			</div>
+		</div>
+		<div class="row master-content">
+			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+				<div id="side-menu">
+					<a href="InfoGeneral.html">
+						<div  id="menu-gral" class="side-menu-item">
+						</div>
+					</a>
+					<a href="normas.html">
+						<div id="menu-normas" class="side-menu-item">
+						</div>
+					</a>
+					<a href="auditorias.html">
+						<div id="menu-auditorias" class="side-menu-item">
+						</div>
+					</a>
+					<a href="reportes.html">
+						<div id="menu-reportes" class="side-menu-item">
+						</div>
+					</a>
+					<a href="usuarios.html">
+						<div id="menu-usuarios" class="side-menu-item">
+						</div>
+					</a>
+				</div>
+				<div id="side-menu-label" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					<span id="icon-triangle" class="glyphicon glyphicon-triangle-right"></span>
+				</div>
+			</div>
+			<div id="content" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
