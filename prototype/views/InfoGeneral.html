@@ -5,14 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	    <link href="../css/packTwoStyles.css" rel="stylesheet">
+	    <link href="../css/masterPageStyles.css" rel="stylesheet">
 	    <script src="../js/jquery.js"></script>
 	    <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
-	    <script type="text/javascript">
-    	$(function(){
-    		/*$("#side-menu").animate({width:'toggle'},350);*/
-    	});
-    </script>
 		<title>
 			General Information
 		</title>
@@ -57,42 +52,49 @@
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
 
 			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" >
-				<div style="text-align:center" class="row">
-					<h3>INFORMACIÓN GENERAL DEL CLIENTE</h3>
+				<div style="text-align:center;" class="row">
+					<h2>INFORMACIÓN GENERAL DEL CLIENTE</h2>
+				</div>
+				<div class = "row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<img src="../img/Chedraui-logo.jpg">
+					</div>
 				</div>
 				<form role="form">
 					<div class="form-group">
 						<label>Nombre:</label>					
-						<input id="name" type="input" class="form-control" placeholder="Chedraui S.A."></input>
+						<input id="name" class="form-control" value="Chedraui S.A.">
 						<label>Calle:</label>
-						<input id="street" type="text" class="form-control" placeholder="Av. Ruiz Cortinez"></input>
+						<input id="street" type="text" class="form-control" value="Av. Ruiz Cortinez"></input>
 						<label>Número:</label>
-						<input id="number" type="text" class="form-control" placeholder="60"></input>
+						<input id="number" type="text" class="form-control" value="60"></input>
 						<label>Colonia:</label>
-						<input type="text" class="form-control" placeholder="Lomas de Chapultepec"></input>
+						<input type="text" class="form-control" value="Lomas de Chapultepec"></input>
 						<label>Código Postal:</label>
-						<input type="text" class="form-control" placeholder="90020"></input>
+						<input type="text" class="form-control" value="90020"></input>
 						<label>Municipio:</label>
-						<input type="text" class="form-control" placeholder="Xalapa Enríquez"></input>
+						<input type="text" class="form-control" value="Xalapa Enríquez"></input>
 						<label>Estado:</label>
-						<input type="text" class="form-control" placeholder="Veracruz"></input>
+						<input type="text" class="form-control" value="Veracruz"></input>
 					</div>
 					<div class="form-group">
 						<label>Teléfono:</label>
 						<div class="input-group">
 							<span class="input-group-addon">#</span>
-							<input type="text" class="form-control" placeholder="5581721732"></input>
+							<input type="text" class="form-control" value="5581721732"></input>
 						</div>
 					</div>
 					<div class="form-group">
 						<label>E-mail:</label>
 						<div class="input-group">
 							<span class="input-group-addon">@</span>
-							<input type="text" class="form-control" placeholder="chedraui@cuestamenos.com"></input>
+							<input type="text" class="form-control" value="chedraui@cuestamenos.com"></input>
 						</div>
 					</div>
 					<br>
-					<button type ="submit" class="btn btn-primary">Guardar</button>
+					<input type ="submit" ></button>
 				</form>
 				<br>
 				<br>
