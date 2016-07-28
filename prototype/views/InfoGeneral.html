@@ -6,6 +6,8 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	    <link href="../css/masterPageStyles.css" rel="stylesheet">
+	    <link href="../css/packOneStyles.css" rel="stylesheet">
+	    <link href="../css/packTwoStyles.css" rel="stylesheet">
 	    <script src="../js/jquery.js"></script>
 	    <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
 		<title>
@@ -27,22 +29,30 @@
 			</div>
 		</div>
 
-		<div class="row master-content">
+		<div  style="background:white;" class="row master-content">
 
 			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 				<div id="side-menu">
-					<a href="../index.html">
-						<div class="side-menu-item">
+					<a href="InfoGeneral.html">
+						<div  id="menu-gral" class="side-menu-item">
 						</div>
-				</a>
-				<div class="side-menu-item">
-				</div>
-				<div class="side-menu-item">
-				</div>
-				<div class="side-menu-item">
-				</div>
-				<div class="side-menu-item">
-				</div>
+					</a>
+					<a href="normas.html">
+						<div id="menu-normas" class="side-menu-item">
+						</div>
+					</a>
+					<a href="auditorias.html">
+						<div id="menu-auditorias" class="side-menu-item">
+						</div>
+					</a>
+					<a href="reportes.html">
+						<div id="menu-reportes" class="side-menu-item">
+						</div>
+					</a>
+					<a href="usuarios.html">
+						<div id="menu-usuarios" class="side-menu-item">
+						</div>
+					</a>
 				</div>
 				<div id="side-menu-label" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 					<span class="glyphicon glyphicon-triangle-right"></span>
@@ -52,15 +62,15 @@
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" ></div>
 
 			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7" >
-				<div style="text-align:center;" class="row">
-					<h2>INFORMACIÓN GENERAL DEL CLIENTE</h2>
+				<div class="row">
+					<div id="head-infogral">
+						<h1><dt>INFORMACIÓN GENERAL DEL CLIENTE</dt></h1>
+					</div>
 				</div>
 				<div class = "row">
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-					<img src="../img/Chedraui-logo.jpg">
-					</div>
+					<center>
+						<img src="../img/Chedraui-logo.jpg">
+					</center>
 				</div>
 				<form role="form">
 					<div class="form-group">
@@ -94,7 +104,7 @@
 						</div>
 					</div>
 					<br>
-					<input type ="submit" ></button>
+					<input id="submit-btn" class="btn cmc-btn right" type="button" value="Guardar">
 				</form>
 				<br>
 				<br>
