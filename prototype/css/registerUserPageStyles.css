@@ -1,0 +1,36 @@
+#head-fru
+{
+	background:#1392E2;
+	text-align:center;
+	color:white;
+}
+
+#content-fru
+{
+	padding-top:15px;
+	font-family: Georgia;
+}
+
+#row-register-user
+{
+}
+
+#form-register-user
+{
+	text-align: left;
+}
+
+#combobox-register-user
+{
+	color: black;
+}
+
+.cmc-btn{
+	margin-top: 10px !important;
+	margin-bottom: 25px !important;
+	background-color: #045a92;
+	color: #EEEEEE;
+	border-radius: 0px !important;
+	border: none !important;	
+	padding: 10px;
+}
