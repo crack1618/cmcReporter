@@ -68,6 +68,13 @@ img{
 	background-color: #045a92;
 }
 
+#head-infogral
+{
+	background:#1392E2;
+	text-align:center;
+	color:white;
+}
+
 .master-content{
 	border-top: 5px solid #1392E2;
 	background-color: #e8f5fd;
