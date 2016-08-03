@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/masterPageStyles.css" rel="stylesheet">
+    <link href="../css/editUserPageStyles.css" rel="stylesheet">
+    <title>Edit User</title>
+</head>
+
+<body>
+	<div class="col-lg-12 col-md-12 col-sm-12 xols-xs-12">
+		<div id="master-header" class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 xols-xs-4">
+				<div><label>Bienvenido</label></div>
+				<div><label>17 de junio de 2017</label></div>
+			</div>	
+			<div class="col-lg-2 col-md-2 col-sm-2 xols-xs-2 col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+				<div style="text-align: right;"><b>Home</b>|<a href="../index.html">Cerrar Sesión</a></div>
+				<div><img src="../img/logo-min.png"></div>
+			</div>
+		</div>
+		<div class="row master-content">
+
+			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+				<div id="side-menu">
+					<a href="InfoGeneral.html">
+						<div id="menu-gral" class="side-menu-item">
+						</div>
+					</a>
+					<a href="normas.html">
+						<div id="menu-normas" class="side-menu-item">
+						</div>
+					</a>
+					<a href="auditorias.html">
+						<div id="menu-auditorias" class="side-menu-item">
+						</div>
+					</a>
+					<a href="reportes.html">
+						<div id="menu-reportes" class="side-menu-item">
+						</div>
+					</a>
+					<a href="usuarios.html">
+						<div id="menu-usuarios" class="side-menu-item">
+						</div>
+					</a>
+				</div>
+				<div id="side-menu-label" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					<span class="glyphicon glyphicon-triangle-right"></span>
+				</div>
+			</div>
+
+			<br>
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+
+			<div id="main-form-eu" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<div class="row">
+					<center>
+						<div id="title-eu"><h1><dt>MODIFICAR DATOS DE USUARIOS<dt></h1></div>
+					</center>
+				</div>
+				<br>
+				<div id="instruction-eu">
+					<p >
+						<h4>Introduzca en la barra de búsqueda el usuario que desea modificar.</h4>
+					</p>
+				</div>
+				<br>
+				<div class="row">
+					<form>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Usuario...">
+								<span class="input-group-btn">
+        							<button class="btn btn-default" type="button">
+        								<span class="glyphicon glyphicon-search"></span>
+        							</button>
+      							</span>
+      						</div>
+						</div>
+					</form>
+				</div>
+				<br>
+				<div id="instruction-eu">
+					<p>
+						<h4>Resultados: <small>(Seleccione uno)</small></h4>
+					</p>
+				</div>
+				<br>
+					<table id="search-table" class="table">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Domicilio</th>	
+								<th>Teléfono</th>
+								<th>E-mail</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+						</tbody>
+					</table>
+					<form id="form-register-user" class="form-inline" role="form">
+					<table>
+						<tbody>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label><h5><dt>Nombre:</dt></h5></label>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="name" placeholder="Introduzca el nombre">
+									</td>
+								</tr>
+							</div>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label><h5><dt>Imagen:</dt></h5></label>
+									</td>
+									<td>
+										<input type="file" name="uploadedfile" class="form-control">
+									</td>
+								</tr>
+							</div>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label><h5><dt>Año de nacimiento:</dt></h5></label>
+									</td>
+									<td>
+										<input type="date" class="form-control" name="birthday">
+									</td>
+								</tr>
+							</div>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label><h5><dt>Correo electronico:</dt></h5></label>
+									</td>
+									<td>
+										<input type="email" class="form-control" name="email" placeholder="Introduzca el email">
+									</td>
+								</tr>
+							</div>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label><h5><dt>Tipo de usuario:</dt></h5></label>
+									</td>
+									<td>
+										<select id="combobox-register-user" class="form-control" name="type">
+											<option value="cliente">Cliente</option>
+											<option value="consultor">Consultor</option>
+											<option value="administrador">Administrador</option>
+										</select>
+									</td>
+								</tr>
+							</div>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label><h5><dt>Contraseña:</dt></h5></label>
+									</td>
+									<td>
+										<input type="password" class="form-control" name="password" placeholder="Introduzca la contraseña">
+									</td>
+								</tr>
+							</div>
+							<div class="form-group">
+								<tr>
+									<td>
+										<label>Confirmación de contraseña:</label>
+									</td>
+									<td>
+										<input type="password" class="form-control" placeholder="Confirme la contraseña">
+									</td>
+								</tr>
+							</div>
+						</tbody>
+					</table>
+					<br>
+					<input id="submit-btn" class="btn cmc-btn right" type="button" value="Guardar">
+				</form>
+				
+			</div>
+			<br>
+		</div>
+	</div>
+</body>
+
+</html>

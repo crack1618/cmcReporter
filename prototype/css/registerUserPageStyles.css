@@ -34,3 +34,9 @@
 	border: none !important;	
 	padding: 10px;
 }
+
+#main-form-ru
+{
+	background-color: lightblue;
+	border: 2px solid blue;
+}

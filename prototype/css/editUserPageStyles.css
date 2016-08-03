@@ -1,0 +1,33 @@
+#title-eu
+{
+	background:#1392E2;
+	color:white;
+	text-align:center;
+}
+
+#instruction-eu
+{
+	background-color: lightblue;
+	border-bottom: 5px solid blue;
+}
+
+#main-form-eu
+{
+	background-color: lightblue;
+	border: 2px solid blue;
+}
+
+.cmc-btn{
+	margin-top: 10px !important;
+	margin-bottom: 25px !important;
+	background-color: #045a92;
+	color: #EEEEEE;
+	border-radius: 0px !important;
+	border: none !important;	
+	padding: 10px;
+}
+
+#search-table
+{
+	border: 2px solid black;
+}
