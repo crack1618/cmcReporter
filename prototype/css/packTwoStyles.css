@@ -97,3 +97,9 @@ img{
 	background-color: #43adef;
 	cursor: pointer;
 }
+
+#main-form-ig
+{
+	background-color: lightblue;
+	border: 2px solid blue;
+}
