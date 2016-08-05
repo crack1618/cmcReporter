@@ -68,13 +68,6 @@ img{
 	background-color: #045a92;
 }
 
-#head-infogral
-{
-	background:#1392E2;
-	text-align:center;
-	color:white;
-}
-
 .master-content{
 	border-top: 5px solid #1392E2;
 	background-color: #e8f5fd;
@@ -100,6 +93,29 @@ img{
 
 #main-form-ig
 {
-	background-color: lightblue;
-	border: 2px solid blue;
+	background-color: #7db9e8;
+	border: 2px solid #052e48;
+}
+
+#image-client
+{
+	background:#7db9e8;
+	border-radius: 12px;
+}
+
+#form
+{
+	padding-left: 15px;
+}
+
+#div-button
+{
+	padding-left: 15px;
+}
+
+#head-infogral
+{
+	background:#052e48;
+	text-align:center;
+	color:white;
 }

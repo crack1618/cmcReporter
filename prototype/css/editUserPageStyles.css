@@ -1,20 +1,31 @@
+tr
+{
+	cursor: pointer;
+}
+
+td
+{
+	height: 30px;
+}
+
 #title-eu
 {
-	background:#1392E2;
+	background:#052e48;
 	color:white;
 	text-align:center;
 }
 
 #instruction-eu
 {
-	background-color: lightblue;
-	border-bottom: 5px solid blue;
+	background-color: #7db9e8;
+	border-bottom: 5px solid #052e48;
 }
 
 #main-form-eu
 {
-	background-color: lightblue;
-	border: 2px solid blue;
+	background:#7db9e8;
+	border: 2px solid #052e48;
+	border-radius: 12px;
 }
 
 .cmc-btn{
@@ -29,5 +40,5 @@
 
 #search-table
 {
-	border: 2px solid black;
+	border: 2px solid #7db9e8;
 }

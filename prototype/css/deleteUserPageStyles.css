@@ -1,0 +1,40 @@
+div.instructions
+{
+	background: #7db9e8;
+	border-bottom: 5px solid #052e48;
+	padding-right: 15px;
+}
+ tr
+{
+	cursor: pointer;
+}
+
+td
+{
+	height: 30px;
+}
+
+#main-form-du
+{
+	background:#7db9e8;
+	border: 2px solid #052e48;
+	border-radius: 12px;
+}
+
+#main-form-title
+{
+	background: #052e48;
+	color: white;
+	text-align: center;
+}
+
+#form-delete-button
+{
+	padding-left: 15px;
+}
+
+#form-search-user
+{
+	padding-left: 15px;
+	padding-right: 15px;
+}

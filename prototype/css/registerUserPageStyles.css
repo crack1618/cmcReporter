@@ -1,6 +1,6 @@
 #head-fru
 {
-	background:#1392E2;
+	background:#052e48;
 	text-align:center;
 	color:white;
 }
@@ -37,6 +37,7 @@
 
 #main-form-ru
 {
-	background-color: lightblue;
-	border: 2px solid blue;
+	background-color: #7db9e8;
+	border: 2px solid #052e48;
+	border-radius: 12px;
 }

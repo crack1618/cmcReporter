@@ -8,6 +8,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/masterPageStyles.css" rel="stylesheet">
     <link href="../css/editUserPageStyles.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/editUserScript.js"></script>
     <title>Edit User</title>
 </head>
 
@@ -15,7 +16,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 xols-xs-12">
 		<div id="master-header" class="row">
 			<div class="col-lg-4 col-md-4 col-sm-4 xols-xs-4">
-				<div><label>Bienvenido</label></div>
+				<div>Bienvenido <label>Arturo Vazquez A</label></div>
 				<div><label>17 de junio de 2017</label></div>
 			</div>	
 			<div class="col-lg-2 col-md-2 col-sm-2 xols-xs-2 col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
@@ -66,7 +67,7 @@
 				<br>
 				<div id="instruction-eu">
 					<p >
-						<h4>Introduzca en la barra de búsqueda el usuario que desea modificar.</h4>
+						<h4>Introduzca en la barra de búsqueda el usuario que desea modificar</h4>
 					</p>
 				</div>
 				<br>
@@ -74,9 +75,9 @@
 					<form>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Usuario...">
+								<input id ="text-search" type="text" class="form-control" placeholder="Usuario...">
 								<span class="input-group-btn">
-        							<button class="btn btn-default" type="button">
+        							<button class="btn btn-default" type="button" onclick="clickSearchButton();">
         								<span class="glyphicon glyphicon-search"></span>
         							</button>
       							</span>
@@ -91,7 +92,8 @@
 					</p>
 				</div>
 				<br>
-					<table id="search-table" class="table">
+				<div id="search-table">
+					<table id="table-result" class="table table-hover">
 						<thead>
 							<tr>
 								<th>Nombre</th>
@@ -101,26 +103,33 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
+							<tr onclick="clickFirstRowTable();">
+								<td id="tname"></td>
+								<td id="tadres"></td>
+								<td id="tphone"></td>
+								<td id="temail"></td>
 							</tr>
 							<tr>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
-								<th></th>
-								<th></th>
-								<th></th>
-								<th></th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 						</tbody>
 					</table>
+					</div>
 					<form id="form-register-user" class="form-inline" role="form">
 					<table>
 						<tbody>
@@ -130,7 +139,7 @@
 										<label><h5><dt>Nombre:</dt></h5></label>
 									</td>
 									<td>
-										<input type="text" class="form-control" name="name" placeholder="Introduzca el nombre">
+										<input id="name" type="text" class="form-control" placeholder="Introduzca el nombre">
 									</td>
 								</tr>
 							</div>
@@ -140,7 +149,7 @@
 										<label><h5><dt>Imagen:</dt></h5></label>
 									</td>
 									<td>
-										<input type="file" name="uploadedfile" class="form-control">
+										<input id="image" type="file" name="uploadedfile" class="form-control">
 									</td>
 								</tr>
 							</div>
@@ -150,7 +159,7 @@
 										<label><h5><dt>Año de nacimiento:</dt></h5></label>
 									</td>
 									<td>
-										<input type="date" class="form-control" name="birthday">
+										<input id="date" type="date" class="form-control" name="birthday">
 									</td>
 								</tr>
 							</div>
@@ -160,7 +169,7 @@
 										<label><h5><dt>Correo electronico:</dt></h5></label>
 									</td>
 									<td>
-										<input type="email" class="form-control" name="email" placeholder="Introduzca el email">
+										<input id="email" type="email" class="form-control" placeholder="Introduzca el email">
 									</td>
 								</tr>
 							</div>
@@ -170,10 +179,10 @@
 										<label><h5><dt>Tipo de usuario:</dt></h5></label>
 									</td>
 									<td>
-										<select id="combobox-register-user" class="form-control" name="type">
+										<select id="combobox" class="form-control" name="type">
 											<option value="cliente">Cliente</option>
 											<option value="consultor">Consultor</option>
-											<option value="administrador">Administrador</option>
+											<option id="admin" value="administrador">Administrador</option>
 										</select>
 									</td>
 								</tr>
@@ -184,7 +193,7 @@
 										<label><h5><dt>Contraseña:</dt></h5></label>
 									</td>
 									<td>
-										<input type="password" class="form-control" name="password" placeholder="Introduzca la contraseña">
+										<input id="pass" type="text" class="form-control" name="password" placeholder="Introduzca la contraseña">
 									</td>
 								</tr>
 							</div>
@@ -194,7 +203,7 @@
 										<label>Confirmación de contraseña:</label>
 									</td>
 									<td>
-										<input type="password" class="form-control" placeholder="Confirme la contraseña">
+										<input id="cpass" type="text" class="form-control" placeholder="Confirme la contraseña">
 									</td>
 								</tr>
 							</div>
