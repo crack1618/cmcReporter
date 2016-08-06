@@ -102,6 +102,7 @@ tbody>tr:hover{
 	width: auto !important;
 	height: auto !important;
 }
+
 #new-ques-container{
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
@@ -127,7 +128,14 @@ tbody>tr:hover{
 	cursor: pointer;
 }
 #pregunta-tipo{
-	width: 200px;
+	width: 250px;
+}
+#ques-container{
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	padding: 20px 15px 20px 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .norm-container{
 	padding: 20px 25px 15px 25px;
