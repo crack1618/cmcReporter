@@ -3,6 +3,7 @@ var okche = true;
 var okart = true;
 var row1 = "arturo";
 var row2 = "chedraui";
+
 function  clickSearchButton() 
 {
 	var name = document.getElementById('text-search').value;
@@ -90,7 +91,7 @@ function  clickSearchButton()
 			row1 = "arturo";
 			row2 = "";
 		}else
-		{
+		{	
 			table.rows[1].cells[0].innerHTML = "";
 			table.rows[1].cells[1].innerHTML = "";
 			table.rows[1].cells[2].innerHTML = "";
@@ -129,26 +130,59 @@ function clickDeleteButton()
 {
 	if(rowSelected == 0)
 	{
-		alert("Seleccione un usuario en la tabla");
+		alertNU();
 	}else if(rowSelected == 1)
 	{
 		if(row1 == "arturo")
 		{
 			okart = false;
+			clickSearchButton();
+			alert();
 		} else if(row1 == "chedraui")
 		{
 			okche = false;
-		}
-		clickSearchButton();
+			clickSearchButton();
+			alert();
+		} 
 	}else if(rowSelected == 2)
 	{
 		if(row2 == "arturo")
 		{
 			okart = false;
+			clickSearchButton();
+			alert();
 		} else if(row2 == "chedraui")
 		{
 			okche = false;
+			clickSearchButton();
+			alert();
 		}
-		clickSearchButton();
 	}
+	rowSelected = 0;
+}
+
+function alert()
+{
+	var alerta = document.getElementById('alerta');
+	alerta.style.display="none";
+	alerta.style.display="block";
+}
+
+function hideAlert()
+{
+	var alerta = document.getElementById('alerta');
+	alerta.style.display="none";
+}
+
+function alertNU()
+{
+	var alerta = document.getElementById('alertaNU');
+	alerta.style.display = "none";
+	alerta.style.display = "block";
+}
+
+function hideAlertNU()
+{
+	var alerta = document.getElementById('alertaNU');
+	alerta.style.display = "none";
 }

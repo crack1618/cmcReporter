@@ -38,3 +38,13 @@ td
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
+#alerta
+{
+	display:none;
+}
+
+#alertaNU
+{
+	display:none;	
+}
