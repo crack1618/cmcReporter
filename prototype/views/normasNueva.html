@@ -12,10 +12,75 @@
     <script type="text/javascript">
     	$(function(){
     		/*$("#side-menu").animate({width:'toggle'},350);*/
+    		/* para master page */
+
     		$("#side-menu-container").mouseenter(function(){
     			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-left");
     		}).mouseleave(function(){
     			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
+    		});
+
+    		function selectAsk(){
+    			selectedVal = $( "#pregunta-tipo option:selected").val();
+    			switch(selectedVal) {
+				    case "opc":
+				        $("#contenido-opc").css("display", "block");
+				        $("#contenido-chk").css("display", "none");
+						$("#contenido-num").css("display", "none");
+						$("#contenido-txt").css("display", "none");
+				        break;
+				    case "chk":
+				        $("#contenido-opc").css("display", "none");
+				        $("#contenido-chk").css("display", "block");
+						$("#contenido-num").css("display", "none");
+						$("#contenido-txt").css("display", "none");
+				        break;
+				    case "num":
+				        $("#contenido-opc").css("display", "none");
+				        $("#contenido-chk").css("display", "none");
+						$("#contenido-num").css("display", "block");
+						$("#contenido-txt").css("display", "none");
+				        break;
+				    case "txt":
+				        $("#contenido-opc").css("display", "none");
+				        $("#contenido-chk").css("display", "none");
+						$("#contenido-num").css("display", "none");
+						$("#contenido-txt").css("display", "block");
+				        break;
+				}
+    		}
+    		
+    		$("#pregunta-tipo").change(selectAsk);
+    		
+    		function deleteOption(){
+    			$(this).closest(".option-wrapper").remove();
+    		}
+
+    		$("#add-chk").click(function(){
+    			var optionChkTemplate = $("#option-template").clone();
+    			optionChkTemplate.attr("id","");
+    			optionChkTemplate.css("display","block");
+    			optionChkTemplate.click(deleteOption);
+    			txtChk = $("#txt-chk").val();
+    			if(txtChk){
+    				optionChkTemplate.children(".option-text").html(txtChk);    				
+    				$("#txt-chk").before(optionChkTemplate);
+    			}
+    			
+    		});
+
+    		$("#add-opc").click(function(){
+    			var optionChkTemplate = $("#option-template").clone();
+    			optionChkTemplate.attr("id","");
+    			optionChkTemplate.css("display","block");
+    			optionChkTemplate.click(deleteOption);
+    			txtChk = $("#txt-opc").val();
+    			$("#txt-opc").val("");
+    			if(txtChk){
+    				optionChkTemplate.children(".option-text").html(txtChk);    				
+    				$("#txt-opc").before(optionChkTemplate);
+    			}
+    			
     		});
     	});
     </script>
@@ -64,8 +129,51 @@
 					<span id="icon-triangle" class="glyphicon glyphicon-triangle-right"></span>
 				</div>
 			</div>
-			<div id="content" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-				
+			<div id="content" class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+				<div class="norm-container">
+					<input class="form-control text-input" id="cod-norma" type="text" placeholder="Código norma">
+					<textarea id="descripcion-norma" cols="70" rows="5" class="form-control" placeholder="Descripción de la norma" ></textarea>
+
+					<div id="new-ques-container">
+						<input class="form-control text-input" id="pregunta-norma" type="text" placeholder="Pregunta">
+						<select class="form-control" id="pregunta-tipo" placeholder="Tipo de respuesta">
+					        <option value="chk">Check box</option>
+					        <option value="num">Cantidad</option>
+					        <option value="opc">Opcion múltiple</option>
+					        <option value="txt">Respuesta abierta</option>
+					        <option value="fec">Fecha</option>
+					        <option value="pic">Foto</option>
+						</select>
+						<div id="pregunta-contenido">
+							<div id="contenido-chk">
+
+								<div id="option-template" class="option-wrapper" style="width:250px;display: none;">
+								  <button class="close" type="button" class="close"aria-label="Close">
+								  	<span aria-hidden="true">&times;</span>
+								  </button>
+								  <label class="option-text"></label>
+								</div>
+								
+								<input id="txt-chk" class="form-control text-input" type="text" placeholder="Agregar Opción">
+								<span id="add-chk" class="glyphicon glyphicon-plus-sign"></span>
+							</div>
+							<div id="contenido-num">
+								<label>Número Máximo:</label>
+								<input class="form-control" type="number" min="0">
+								<label>Número Mínimo:</label>
+								<input class="form-control" type="number" min="0">
+							</div>
+							<div id="contenido-opc">
+								<input id="txt-opc" class="form-control text-input" type="text" placeholder="Agregar Opción">
+								<span id="add-opc" class="glyphicon glyphicon-plus-sign"></span>
+							</div>
+							<div id="contenido-txt">
+								<label>Longitud máxima:</label>
+								<input class="form-control" type="number" min="0">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
