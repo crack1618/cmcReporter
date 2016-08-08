@@ -7,6 +7,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/masterPageStyles.css" rel="stylesheet">
     <link href="../css/deleteReportPageStyles.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/deleteReportScript.js"></script>
 	<title>Delete Report</title>
 </head>
 
@@ -48,6 +49,16 @@
 			</div>
 
 			<div id="main-container">
+				<div class="row">
+						<div class="alert alert-info fade in" id="alertR">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close" onclick="esconderAlertaR();">&times;</a>
+							<strong>Seleccione una norma en la tabla de abajo y un reporte en el combobox</strong>
+						</div>
+						<div class="alert alert-success fade in" id="alert">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close" onclick="esconderA();">&times;</a>
+							<strong>Reporte Eliminado correctamente</strong>
+						</div>
+					</div>
 				<br>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -56,7 +67,7 @@
 							<h2><dt>ELIMINAR REPORTES</dt></h2>
 						</div>
 						<br>
-						<div style="padding-left:15px; padding-right:15px;" class="row">
+						<div style="padding-lft:15px; padding-right:15px;" class="row">
 							<div class="instructions">
 								<p><h4>Introduzca el código de la norma</h4></p>
 							</div>
@@ -64,9 +75,9 @@
 						<br>
 						<form>
 							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Código...">
+								<input id="text-search" type="text" class="form-control" placeholder="Código...">
 								<span class="input-group-btn">
-									<button type="button" class="btn btn-default">
+									<button type="button" class="btn btn-default" onclick="clickBotonLupa();">
 										<span class="glyphicon glyphicon-search"></span>
 									</button>
 								</span>
@@ -109,16 +120,17 @@
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+					
 					<div class="well">
 						<br>
 						<div class="row">
 							<div style="padding-left:15px; padding-right:15px">
 								<label>Normas enlistadas abajo:</label>
-								<input class="form-control" type="text" value="Todas" readonly>
+								<input id="des-tab" class="form-control" type="text" value="Todas" readonly>
 							</div>
 						</div>
 						<br>
-						<table class="table table-hover">
+						<table id="table-result" class="table table-hover">
 							<thead>
 								<tr>
 									<th>Código</th>
@@ -126,17 +138,13 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Norma 1</td>
-									<td>Norma pendeja</td>
+								<tr onclick="seleccionarFila(this);">
+									<td id="f1c1">Norma 1</td>
+									<td id="f1c2">Descripción de la norma 1.</td>
 								</tr>
-								<tr> 
-									<td>Norma 2</td>
-									<td>Norma idiota</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
+								<tr onclick="seleccionarFila(this);"> 
+									<td id="f2c1">Norma 2</td>
+									<td id="f2c2">Descripción de la norma 2.</td>
 								</tr>
 							</tbody>
 						</table>
@@ -145,7 +153,7 @@
 							<form class="form">
 								<div class="form-group">
 									<label>Norma seleccionada:</label>
-									<input type="text" class="form-control" readonly>
+									<input id="norm-sele" type="text" class="form-control" value="Ninguna" readonly>
 								</div>
 								<br>
 								<div class="instructions">
@@ -154,11 +162,10 @@
 								<br>
 								<div class="form-group">
 									<label>Reportes asociados:</label>
-									<select class="form-control">
-										<option></option>
+									<select id="unico-select" class="form-control" onclick="seleccionar();">
 									</select>
 								</div>
-								<button type="button" class="btn btn-warning">Eliminar Reporte</button>
+								<button onclick="clickBotonNaranja();" type="button" class="btn btn-warning">Eliminar Reporte</button>
 							</form>
 						</div>
 					</div>
