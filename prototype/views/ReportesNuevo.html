@@ -19,7 +19,47 @@
     			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
     		});
     	});
+    	$(function(){ 
+    		var visible = 0;
+    		$("#submenu-wrapper").css("display","none");
+    		$("#submenu").slideUp("slow");
+		    $("#campo").click(function(){
+		    	if(visible == 0){
+		    		$("#submenu-wrapper").css("display","block");
+		    		$("#arrow").removeClass("glyphicon-chevron-down");
+		    		$("#arrow").addClass("glyphicon-chevron-up");
+		    		visible = 1;
+		    	}else{
+		    		$("#submenu-wrapper").css("display","none");
+		    		$("#arrow").removeClass("glyphicon-chevron-up");
+		    		$("#arrow").addClass("glyphicon-chevron-down");
+		    		visible = 0;
+		    	}
+		    	
+		    	$("#submenu").slideToggle("slow");
+		    });
+		});
     </script>
+    <style type="text/css">
+    	ul{
+    		list-style: none; 
+    	}
+    	li{
+    		background-color: gray;
+    		color: black;
+    		width: 250px;
+    		padding: 5px;
+    		cursor: pointer;
+    		border: 1px solid black;
+    	}
+    	li:hover{
+    		background-color: #505050;
+    		color: white;
+    	}
+    	label{
+    		margin-left: 15px;
+    	}
+    </style>
 	<title>Nuevo Reporte</title>
 </head>
 
@@ -39,24 +79,29 @@
 		<div class="row master-content">
 			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 				<div id="side-menu">
-					<a href="InfoGeneral.html">
-						<div id="menu-gral" class="side-menu-item"></div>
+					<a href="InfoGeneral.html" data-toggle="tooltip" data-placement="top" title="Información General">
+						<div  id="menu-gral" class="side-menu-item">
+						</div>
 					</a>
-					<a href="normas.html">
-						<div id="menu-normas" class="side-menu-item"></div>
+					<a href="normas.html" data-toggle="tooltip" data-placement="top" title="Normas">
+						<div id="menu-normas" class="side-menu-item">
+						</div>
 					</a>
-					<a href="auditorias.html">
-						<div id="menu-auditorias" class="side-menu-item"></div>
+					<a href="auditorias.html" data-toggle="tooltip" data-placement="top" title="Auditorías">
+						<div id="menu-auditorias" class="side-menu-item">
+						</div>
 					</a>
-					<a href="reportes.html">
-						<div id="menu-reportes" class="side-menu-item"></div>
+					<a href="reportes.html" data-toggle="tooltip" data-placement="top" title="Reportes">
+						<div id="menu-reportes" class="side-menu-item">
+						</div>
 					</a>
-					<a href="usuarios.html">
-						<div id="menu-usuarios" class="side-menu-item"></div>
+					<a href="usuarios.html" data-toggle="tooltip" data-placement="top" title="Usuarios">
+						<div id="menu-usuarios" class="side-menu-item">
+						</div>
 					</a>
 				</div>
 				<div id="side-menu-label" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-					<span class="glyphicon glyphicon-triangle-right"></span>
+					<span id="icon-triangle" class="glyphicon glyphicon-triangle-right"></span>
 				</div>
 			</div>
 		</div>
@@ -69,12 +114,68 @@
 				</div>
 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<div class="well"></div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-					
-				</div>
+					<div id="paper" class="well">
+						<div id="texto" class="row">
+							<div class="form-group">
+								<label>Norma:</label> NOM-003-SEGOB-2011
+							</div>
+						</div>
+						<br>
+						<div id="cuadro-texto" class="row">
+							<a href="#" class="close" aria-label="close" onclick="esconderA(this);">&times;</a>
+							<textarea class="form-control" rows="7">
+							Que el Plan Nacional de Desarrollo 2001-2006 definió como política interior, que el Ejecutivo Federal aumentara la capacidad preventiva del Sistema Nacional de Protección Civil y mitigara los efectos de los desastres, a partir de una mayor coordinación de esfuerzos intergubernamentales y de la promoción de la contribución ciudadana, estableciendo dentro de su objetivo rector 5, el transitar de un sistema de protección civil reactivo a uno preventivo con la corresponsabilidad y participación de los tres órdenes de gobierno, población y sectores social y privado.
+							</textarea>
+						</div>
+						<br>
+						<div id="cuadro-texto" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<a href="#" class="close" aria-label="close" onclick="esconderA(this);">&times;</a>
+							<textarea class="form-control" rows="14">
+								    Que el Plan Nacional de Desarrollo 2001-2006 definió como política interior, que el Ejecutivo Federal aumentara la capacidad preventiva del Sistema Nacional de Protección Civil y mitigara los efectos de los desastres, a partir de una mayor coordinación de esfuerzos intergubernamentales y de la promoción de la contribución ciudadana, estableciendo dentro de su objetivo rector 5, el transitar de un sistema de protección civil reactivo a uno preventivo con la corresponsabilidad y participación de los tres órdenes de gobierno, población y sectores social y privado.
+							</textarea>
+						</div>
 
+						<div id="cuadro-texto"class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<a href="#" class="close" aria-label="close" onclick="esconderA(this);">&times;</a>
+							<div style="padding-left:20px; padding-right:20px;" class="form-group">
+								<img src="../img/croquis.jpg">
+								<br>
+								<label>Figura 1:</label>
+								<input type="text" value="Introduzca la descripción de la imagen" class="form-control">
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div id="cuadro-texto" class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								<a href="#" class="close" aria-label="close" onclick="esconderA(this);">&times;</a>
+								<textarea class="form-control" rows="12">
+								    Que el Plan Nacional de Desarrollo 2001-2006 definió como política interior, que el Ejecutivo Federal aumentara la capacidad preventiva del Sistema Nacional de Protección Civil y mitigara los efectos de los desastres, a partir de una mayor coordinación de esfuerzos intergubernamentales y de la promoción de la contribución ciudadana, estableciendo dentro de su objetivo rector 5, el transitar de un sistema de protección civil reactivo a uno preventivo con la corresponsabilidad y participación de los tres órdenes de gobierno, población y sectores social y privado.
+							</textarea>
+							</div>
+							<div id="cuadro-texto" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<a href="#" class="close" aria-label="close" onclick="esconderA(this);">&times;</a>
+								<img id="maps" src="../img/maps.gif">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="menu" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<ul>
+			<li><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><label>Imagen</label></li>
+			<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><label>Mapa</label></li>
+			<li><span class="glyphicon glyphicon-edit" aria-hidden="true"></span><label>Plano</label></li>
+			<li><span class="glyphicon glyphicon-th" aria-hidden="true"></span><label>Tabla</label></li>
+			<li id="campo"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span><label>Campo</label><span id="arrow" style="float:right;margin-top: 5px;" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></li>
+			<li id="submenu-wrapper">
+				<ul id="submenu">
+					<li><span class="glyphicon glyphicon-user" aria-hidden="true"></span><label>Cliente</label></li>
+					<li><span class="glyphicon glyphicon-book" aria-hidden="true"></span><label>Norma</label></li>
+				</ul>
+			</li>
+			<li><span class="glyphicon glyphicon-list" aria-hidden="true"></span><label>Índice</label></li>
+			<li><span class="glyphicon glyphicon-stats" aria-hidden="true"></span><label>Gráfica</label></li>
+		</ul>
+				</div>
 			</div>
 		</div>
 	</div>

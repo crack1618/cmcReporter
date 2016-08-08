@@ -137,7 +137,7 @@ function clickBotonNaranja()
 		document.getElementById('alert').style.display = "none";
 		document.getElementById('alert').style.display = "block";
 	}
-
+	
 }
 
 function SeleccionarReporte(option)
