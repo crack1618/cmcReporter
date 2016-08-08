@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/masterPageStyles.css" rel="stylesheet">
-    <link href="../css/packOneStyles.css" rel="stylesheet">
+    <link href="../css/deleteReportPageStyles.css" rel="stylesheet">
     <script src="../js/jquery.js"></script>
     <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
     <script type="text/javascript">
@@ -65,49 +65,110 @@
 				</div>
 			</div>
 			<div id="content" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-						<div class="row">
-							<a href="normasNueva.html">
-								<div  id="menu-nueva-norma" class="menu-item">
-								</div>
-							</a>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="well">
+						<div id="box-title" class="row">
+							<h2><dt>ELIMINAR NORMAS</dt></h2>
 						</div>
-						<div class="row menu-item-label">
-							<label>NUEVA NORMA</label>
+						<br>
+						<div style="padding-left:15px; padding-right:15px;" class="row">
+							<div class="instructions">
+								<p><h4>Introduzca el código de la norma</h4></p>
+							</div>
+						</div>
+						<br>
+						<form>
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Código...">
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
+					<div class="well">
+						<div id="box-sta" class="row">
+							<h4><dt>NORMAS REGISTRADAS POR ÁREA</dt></h4>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div class="letter-icon">
+									<img class="img-icon" src="../img/higiene.png">
+									<b>:3</b>
+								</div>
+								<div class="letter-icon">
+									<img class="img-icon" src="../img/medamb.png">
+									<b>:1</b>
+								</div>
+								<div class="letter-icon">
+									<img class="img-icon" src="../img/responsa.png">
+									<b>:8</b>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<div>
+									<div class="letter-icon">
+										<img class="img-icon" src="../img/pc.png">
+										<b>:2</b>
+									</div>
+									<div class="letter-icon">
+										<img class="img-icon" src="../img/susten.png">
+										<b>:7</b>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+					<div class="well">
+						<br>
 						<div class="row">
-							<a href="normasBuscar.html?mode=edit">
-								<div id="menu-editar-norma" class="menu-item">
+						<div style="padding-left:15px; padding-right:15px">
+							<label>Normas enlistadas abajo:</label>
+							<input class="form-control" type="text" value="Todas" readonly>
+						</div>
+						</div>
+						<br>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Código</th>
+									<th>Descripción</th>
+								</tr>
+							</thead>
+							<tbody>
+								<a href="#">
+									<tr class="pick-norm">
+										<td>NOM-004-STPS-1999</td>
+										<td>Riesgo por maquinaria y equipo.</td>
+									</tr>
+								</a>
+								<a href="#">
+									<tr class="pick-norm"> 
+										<td>NOM-003-SEGOB-2011</td>
+										<td>Señales y avisos de Proteccion Civil</td>
+									</tr>
+								</a>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<br>
+						<div style="padding-left:15px; padding-right:15px;" class="row">
+							<form class="form">
+								<div class="form-group">
+									<label>Norma seleccionada:</label>
+									<input type="text" class="form-control" readonly>
 								</div>
-							</a>
-						</div>
-						<div class="row menu-item-label">
-							<label>EDITAR NORMA</label>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-						<div class="row">
-							<a href="normasEliminar.html">
-								<div id="menu-eliminar-norma" class="menu-item">
-								</div>
-							</a>
-						</div>
-						<div class="row menu-item-label">
-							<label>ELIMINAR NORMA</label>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-						<div class="row">
-							<a href="normasBuscar.html?mode=reg">
-								<div id="menu-registrar-norma" class="menu-item">
-								</div>
-							</a>
-						</div>
-						<div class="row menu-item-label">
-							<label>REGISTRAR NORMA</label>
+								<button type="button" class="btn btn-warning">Eliminar Norma</button>
+							</form>
 						</div>
 					</div>
 				</div>

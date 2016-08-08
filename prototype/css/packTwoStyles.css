@@ -10,6 +10,14 @@ a:hover{
 img{
 	padding: 5px;
 }
+#alerta{
+	display:none; 
+	position: absolute; 
+	left: 40%; 
+	top:5%;
+	opacity: .8;
+	z-index: 10;
+}
 #content{
 	margin-left: 150px;
 }

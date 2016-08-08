@@ -14,7 +14,6 @@
     <script type="text/javascript">
     	$(function(){
     		/* para master page */
-    		$('[data-toggle="tooltip"]').tooltip();
     		$("#side-menu-container").mouseenter(function(){
     			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-left");
     		}).mouseleave(function(){
@@ -31,8 +30,8 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<div>Bienvenido <label>Arturo Vazquez A</label></div>
 				<div><label>17 de Junio del 2017</label></div>
-				<div>Cliente: <label>Comercializadora del Sur S.A. de C.V.</label> </div>
-				<div>Sucursal: <label>Av. Xalapa Esq. Ruiz Cortinez</label> </div>
+				<div>Cliente: <label>Grupo Chedrahui S.A. de C.V.</label> </div>
+				<div>Sucursal: <label>Lomas de Chapultepec</label> </div>
 				<div>Año: <label>2017</label> </div>
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
@@ -41,10 +40,6 @@
 			</div>
 		</div>
 		<div class="row master-content">
-			<div class="alert alert-success fade in" id="alerta">
-				<a id="alert-close" href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-				<strong>La norma se ha guardado correctamente</strong> 
-			</div>
 			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 				<div id="side-menu">
 					<a href="InfoGeneral.html">
@@ -72,19 +67,50 @@
 					<span id="icon-triangle" class="glyphicon glyphicon-triangle-right"></span>
 				</div>
 			</div>
-			<div id="content" class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+			<div id="content" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
 				<div class="norm-container">
-					<input class="form-control text-input" id="cod-norma" type="text" placeholder="Código norma">
-					<select class="form-control" id="norma-tipo" style="width:500px;margin-top:5px;margin-bottom:15px;">
-						<option>-- Seleccione tipo de norma --</option>
-				        <option value="chk">Seguridad e Higiene</option>
-				        <option value="num">Protección Civil</option>
-				        <option value="opc">Gestión Ambiental</option>
-				        <option value="txt">Estudios y Análisis</option>
-				        <option value="fec">Sustentabilidad y Responsabilidad Social</option>
-				        <option value="pic">Venta de equipos y accesorios de seguridad</option>
-					</select>
-					<textarea id="descripcion-norma" cols="70" rows="5" class="form-control" placeholder="Descripción de la norma" ></textarea>
+					<input class="form-control text-input" id="cod-norma" type="text" placeholder="Código norma" disabled value="PROY-NOM-003-SEGOB-2011">
+					<textarea id="descripcion-norma" cols="70" rows="5" class="form-control" placeholder="Descripción de la norma">El objetivo de esta norma es especificar y homologar las señales y avisos que en materia de protección civil, permitan a la población identificar y comprender los mensajes de información, precaución, prohibición y obligación.</textarea>
+					<div id="ques-container" class="option-wrapper" style="display: none;">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<label class="ques-text"></label>
+					</div>
+					<div class="option-wrapper ques-container">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<label class="ques-text">Extintores</label>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Agua</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Espuma</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Polvo ABC</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Anhídrido Carbónico</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Halon</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Polvos Especiales</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1">Otros</label></div>
+					</div>
+					<div class="option-wrapper ques-container">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<label class="ques-text">Número de salidas de emergencia. </label>
+						<input class="form-control" type="number" min="0" style="width:150px;">
+					</div>
+					<div class="option-wrapper ques-container">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<label class="ques-text">Estado actual de equipo de trbajo.</label>
+						<div class="input-group" style="width:200px;"><input type="text" class="form-control" placeholder="nombre de archivo" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon1"><span id="icon-triangle" class="glyphicon glyphicon-camera"></span></span></div>
+					</div>
+					<div class="option-wrapper ques-container">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<label class="ques-text">Fecha de mantenimiento de extintores</label>
+						<input type="date" class="form-control" name="dq1" style="width:200px;">
+					</div>
 					<div id="ques-container" class="option-wrapper" style="display: none;">
 						<button type="button" class="close" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
@@ -139,7 +165,6 @@
 							<input id="save-norm" class="btn cmc-btn right" type="button" value="Guardar Norma" style="margin-bottom:0px !important;">
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</div>
