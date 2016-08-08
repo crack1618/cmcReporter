@@ -66,3 +66,13 @@ div.letter-icon
 {
 	color: #005490;
 }
+
+#alertR
+{
+	display: none;
+}
+
+#alert
+{
+	display: none;
+}
