@@ -97,7 +97,7 @@ tbody>tr:hover{
 	text-transform: uppercase;
 	margin-bottom: 15px;
 }
-#descripcion-norma{
+textarea{
 	resize: none;
 	width: auto !important;
 	height: auto !important;

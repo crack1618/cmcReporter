@@ -7,11 +7,16 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/masterPageStyles.css" rel="stylesheet">
     <link href="../css/packOneStyles.css" rel="stylesheet">
-    <script src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css" />
+
     <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
     <script type="text/javascript">
     	$(function(){
-    		/*$("#side-menu").animate({width:'toggle'},350);*/
     		/* para master page */
     		var numQues = 1;
     		$("#side-menu-container").mouseenter(function(){
@@ -19,7 +24,7 @@
     		}).mouseleave(function(){
     			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
     		});
-
+    		/* aquí termina lo de la master page*/
     		function selectAsk(){
     			selectedVal = $( "#pregunta-tipo option:selected").val();
     			switch(selectedVal) {
@@ -52,9 +57,17 @@
 						$("#add-ques-btn").css("display", "initial");
 				        break;
 				    case "pic":
+				    	$("#contenido-opc").css("display", "none");
+				        $("#contenido-chk").css("display", "none");
+						$("#contenido-num").css("display", "none");
+						$("#contenido-txt").css("display", "none");
 				    	$("#add-ques-btn").css("display", "initial");
 				        break;
 				    case "fec":
+				    	$("#contenido-opc").css("display", "none");
+				        $("#contenido-chk").css("display", "none");
+						$("#contenido-num").css("display", "none");
+						$("#contenido-txt").css("display", "none");
 				    	$("#add-ques-btn").css("display", "initial");
 				        break;
 				    default:
@@ -72,10 +85,7 @@
     		function deleteOption(){
     			$(this).closest(".option-wrapper").remove();
     		}
-
-    		$(".close").click(deleteOption);
-
-    		$("#add-chk").click(function(){
+    		function addCheckBoxOp(){
     			var optionChkTemplate = $("#option-template").clone();
     			optionChkTemplate.attr("id","");
     			optionChkTemplate.css("display","block");
@@ -87,10 +97,9 @@
     				$("#txt-chk").before(optionChkTemplate);
     				txtChk = $("#txt-chk").val("");
     			}
-    			
-    		});
+    		}
 
-    		$("#add-opc").click(function(){
+    		function addRadioOp(){
     			var optionChkTemplate = $("#option-template").clone();
     			optionChkTemplate.attr("id","");
     			optionChkTemplate.css("display","block");
@@ -103,47 +112,72 @@
     				$("#txt-opc").before(optionChkTemplate);
     				txtChk = $("#txt-opc").val("");
     			}
-    		});
+    		}
+
+    		$(".close").click(deleteOption);
+
+    		$("#add-chk").click(addCheckBoxOp);
+
+    		$("#txt-chk").keypress(function(e) {
+			    if(e.which == 13) {
+			        addCheckBoxOp();
+			    }
+			});
+
+    		$("#add-opc").click(addRadioOp);
+
+    		$("#txt-opc").keypress(function(e) {
+			    if(e.which == 13) {
+			        addRadioOp();
+			    }
+			});
 
     		$("#add-ques").click(function(){
     			var selectedVal = $( "#pregunta-tipo option:selected").val();
     			var quesText = $("#pregunta-norma").val();
     			var quesCont = $("#ques-container").clone();
     			quesCont.css("display","block");
+    			quesCont.children(".close").click(deleteOption);
+    			quesCont.children(".ques-text").html(quesText);
     			switch(selectedVal) {
 				    case "opc":
-						var options = $(".ques-opc > .option-text");
-						console.log("check1")
-						console.log(options);
-						quesCont.children(".ques-text").html(quesText);
-						for(var optTxt in options){
-							console.log(optTxt);
-							quesCont.append('<div class="radio"><label><input type="radio" name="q'+numQues+'">'+ optTxt.text() +'</label></div>');
-						}
+						var options = $(".ques-opc > .option-text").clone();
+						for(var i = 0; i < options.length; i++){
+							quesCont.append('<div class="radio"><label><input type="radio" name="q'+numQues+'">'+$(options[i]).html()+'</label></div>');
+				    	}
+				    	$(".ques-opc").remove();
 				        break;
 				    case "chk":
-				    	var options = $(".ques-chk > .option-text");
-				    	console.log("check1")
-						console.log(options);
-				    	quesCont.children(".ques-text").html(quesText);
-						for(var optTxt in options){
-							quesCont.append('<div class="check"><label><input type="check" name="q'+numQues+'">'+ optTxt +'</label></div>');
-						}
+				    	var options = $(".ques-chk > .option-text").clone();
+				    	for(var i = 0; i < options.length; i++){
+							quesCont.append('<div class="checkbox"><label><input type="checkbox" name="q'+numQues+'">'+ $(options[i]).html() +'</label></div>');
+				    	}
+				    	$(".ques-chk").remove();
 				        break;
 				    case "num":
+				    	var max = $("#max-num").val();
+				    	var min = $("#min-num").val();
+				    	quesCont.append('<input class="form-control" type="number" min="'+min+'" max="'+max+'" style="width:150px;">');
 				        break;
 				    case "txt":
+				    	var max = $("#max-text").val();
+				    	quesCont.append('<textarea id="descripcion-norma" cols="70" rows="2" class="form-control" placeholder="Escriba Respuesta" ></textarea>');
 				        break;
 				    case "pic":
+				        quesCont.append('<div class="input-group"><input type="text" class="form-control" placeholder="nombre de archivo" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon1"><span id="icon-triangle" class="glyphicon glyphicon-camera"></span></span></div>');
 				        break;
 				    case "fec":
-				        break;
-				    default:
+						quesCont.append('<input type="date" class="form-control" name="dateQues'+numQues+'" style="width:200px;">');
 				        break;
 				}
 				$("#new-ques-container").before(quesCont);
-				numQues++;
+				if(selectedVal == "fec"){
+					$('#datetimepicker' + numQues + '').datetimepicker({
+				      pickTime: false	
+				    });
+				}
 				$("#pregunta-norma").val("");
+				numQues++;
     		});
 
     	});
@@ -198,25 +232,10 @@
 					<input class="form-control text-input" id="cod-norma" type="text" placeholder="Código norma">
 					<textarea id="descripcion-norma" cols="70" rows="5" class="form-control" placeholder="Descripción de la norma" ></textarea>
 					<div id="ques-container" class="option-wrapper" style="display: none;">
-						<button class="close" type="button" class="close" aria-label="Close">
+						<button type="button" class="close" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<label class="ques-text"></label>
-						<!-- <div class="radio">
-							<label><input type="radio" name="q1">Muy mala</label>
-						</div>
-						<div class="radio">
-							<label><input type="radio" name="q1">Mala</label>
-						</div>
-						<div class="radio">
-							<label><input type="radio" name="q1">Regular</label>
-						</div>
-						<div class="radio">
-							<label><input type="radio" name="q1">Buena</label>
-						</div>
-						<div class="radio">
-							<label><input type="radio" name="q1">Muy buena</label>
-						</div> -->
 					</div>
 					<div id="new-ques-container">
 						<input class="form-control text-input" id="pregunta-norma" type="text" placeholder="Pregunta">
@@ -232,7 +251,7 @@
 						<div id="pregunta-contenido">
 							<div id="contenido-chk">
 								<div id="option-template" class="option-wrapper" style="width:300px;display: none;">
-								  <button class="close" type="button" class="close"aria-label="Close">
+								  <button type="button" class="close"aria-label="Close">
 								  	<span aria-hidden="true">&times;</span>
 								  </button>
 								  <label class="option-text"></label>
@@ -242,9 +261,9 @@
 							</div>
 							<div id="contenido-num">
 								<label>Número Máximo:</label>
-								<input class="form-control" type="number" min="0">
+								<input id="min-num" class="form-control" type="number" min="0">
 								<label>Número Mínimo:</label>
-								<input class="form-control" type="number" min="0">
+								<input id="max-num" class="form-control" type="number" min="0">
 							</div>
 							<div id="contenido-opc">
 								<input id="txt-opc" class="form-control text-input" type="text" placeholder="Agregar Opción">
@@ -252,7 +271,7 @@
 							</div>
 							<div id="contenido-txt">
 								<label>Longitud máxima:</label>
-								<input class="form-control" type="number" min="0">
+								<input id="max-txt" class="form-control" type="number" min="0">
 							</div>
 						</div>
 						<div id="add-ques-btn" class="row" style="margin-bottom:0px !important; display: none;">
