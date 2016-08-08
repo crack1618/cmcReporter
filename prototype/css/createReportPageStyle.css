@@ -55,3 +55,10 @@ img.iconos
 	height: 200px;
 	width: 200px;
 }
+
+#menu
+{
+	position: fixed;
+	float: right;
+	margin-left: 900px;
+}
