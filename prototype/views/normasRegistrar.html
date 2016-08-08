@@ -20,6 +20,10 @@
     			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
     		});
     		/* aquí termina lo de la master page*/
+
+    		$("#gen-report").click(function(){
+    			window.open("../files/nom-003-segob-2011.pdf");
+    		});
     	});
     </script>
 	<title>CmcReporter</title>
@@ -83,11 +87,11 @@
 						</button>
 						<label class="ques-text">Extintores</label>
 						<div class="checkbox"><label><input type="checkbox" name="q1">Agua</label></div>
-						<div class="checkbox"><label><input type="checkbox" name="q1">Espuma</label></div>
-						<div class="checkbox"><label><input type="checkbox" name="q1">Polvo ABC</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1" checked>Espuma</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1" checked>Polvo ABC</label></div>
 						<div class="checkbox"><label><input type="checkbox" name="q1">Anhídrido Carbónico</label></div>
 						<div class="checkbox"><label><input type="checkbox" name="q1">Halon</label></div>
-						<div class="checkbox"><label><input type="checkbox" name="q1">Polvos Especiales</label></div>
+						<div class="checkbox"><label><input type="checkbox" name="q1" checked>Polvos Especiales</label></div>
 						<div class="checkbox"><label><input type="checkbox" name="q1">Otros</label></div>
 					</div>
 					<div class="option-wrapper ques-container">
@@ -95,74 +99,26 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<label class="ques-text">Número de salidas de emergencia. </label>
-						<input class="form-control" type="number" min="0" style="width:150px;">
+						<input class="form-control" type="number" min="0" style="width:150px;" value="2">
 					</div>
 					<div class="option-wrapper ques-container">
 						<button type="button" class="close" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<label class="ques-text">Estado actual de equipo de trabajo.</label>
-						<div class="input-group" style="width:200px;"><input type="text" class="form-control" placeholder="nombre de archivo" aria-describedby="basic-addon2"><span class="input-group-addon" id="basic-addon1"><span id="icon-triangle" class="glyphicon glyphicon-camera"></span></span></div>
+						<label class="ques-text">Estado actual de equipo de tarbajo.</label>
+						<div class="input-group" style="width:200px;"><input type="text" class="form-control" placeholder="nombre de archivo" aria-describedby="basic-addon2" value="equipo-trabajo.jpg"> <span class="input-group-addon" id="basic-addon1"><span id="icon-triangle" class="glyphicon glyphicon-camera"></span></span></div>
+						<img src="../img/workEquipment.jpg">
 					</div>
 					<div class="option-wrapper ques-container">
 						<button type="button" class="close" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<label class="ques-text">Fecha de mantenimiento de extintores</label>
-						<input type="date" class="form-control" name="dq1" style="width:200px;">
-					</div>
-					<div id="ques-container" class="option-wrapper" style="display: none;">
-						<button type="button" class="close" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<label class="ques-text"></label>
-					</div>
-					<div id="new-ques-container">
-						<input class="form-control text-input" id="pregunta-norma" type="text" placeholder="Pregunta">
-						<select class="form-control" id="pregunta-tipo" placeholder="Tipo de respuesta">
-							<option>-- Seleccione una opción --</option>
-					        <option value="chk">Check box</option>
-					        <option value="num">Cantidad</option>
-					        <option value="opc">Opcion múltiple</option>
-					        <option value="txt">Respuesta abierta</option>
-					        <option value="fec">Fecha</option>
-					        <option value="pic">Foto</option>
-						</select>
-						<div id="pregunta-contenido">
-							<div id="contenido-chk">
-								<div id="option-template" class="option-wrapper" style="width:300px;display: none;">
-								  <button type="button" class="close"aria-label="Close">
-								  	<span aria-hidden="true">&times;</span>
-								  </button>
-								  <label class="option-text"></label>
-								</div>
-								<input id="txt-chk" class="form-control text-input" type="text" placeholder="Agregar Opción">
-								<span id="add-chk" class="glyphicon glyphicon-plus-sign"></span>
-							</div>
-							<div id="contenido-num">
-								<label>Número Máximo:</label>
-								<input id="min-num" class="form-control" type="number" min="0">
-								<label>Número Mínimo:</label>
-								<input id="max-num" class="form-control" type="number" min="0">
-							</div>
-							<div id="contenido-opc">
-								<input id="txt-opc" class="form-control text-input" type="text" placeholder="Agregar Opción">
-								<span id="add-opc" class="glyphicon glyphicon-plus-sign"></span>
-							</div>
-							<div id="contenido-txt">
-								<label>Longitud máxima:</label>
-								<input id="max-txt" class="form-control" type="number" min="0">
-							</div>
-						</div>
-						<div id="add-ques-btn" class="row" style="margin-bottom:0px !important; display: none;">
-							<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 col-lg-offset-9 col-md-offset-9 col-sm-offset-6 col-xs-offset-6">
-								<input id="add-ques" class="btn cmc-btn right" type="button" value="Agregar pregunta" style="margin-bottom:0px !important;">
-							</div>
-						</div>
+						<input type="date" class="form-control" name="dq1" style="width:200px;" value="2011-08-08">
 					</div>
 					<div id="add-ques-btn" class="row" style="margin-bottom:0px !important;">
 						<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 col-lg-offset-9 col-md-offset-9 col-sm-offset-6 col-xs-offset-6">
-							<input id="save-norm" class="btn cmc-btn right" type="button" value="Guardar Norma" style="margin-bottom:0px !important;">
+							<input id="gen-report" class="btn cmc-btn right" type="button" value="Generar Reporte" style="margin-bottom:0px !important;">
 						</div>
 					</div>
 			</div>

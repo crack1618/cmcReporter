@@ -10,6 +10,17 @@
 	    <link href="../css/packTwoStyles.css" rel="stylesheet">
 	    <script src="../js/jquery.js"></script>
 	    <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
+	    <script type="text/javascript">
+	    	$(function(){
+	    		/*$("#side-menu").animate({width:'toggle'},350);*/
+	    		$("#side-menu-container").mouseenter(function(){
+	    			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-left");
+	    		}).mouseleave(function(){
+	    			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
+	    		});
+	    	});
+	    </script>
+		<title>CmcReporter</title>
 		<title>
 			General Information
 		</title>
@@ -22,9 +33,12 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<div>Bienvenido <label>Arturo Vazquez A</label></div>
 				<div><label>17 de Junio del 2017</label></div>
+				<div>Cliente: <label>Grupo Chedraui S.A. de C.V.</label> </div>
+				<div>Sucursal: <label>Lomas de Chapultepec</label> </div>
+				<div>Año: <label>2017</label> </div>
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
-				<div style="text-align: right;"><b>Home</b>|<a href="../index.html">Cerrar Sesion</a></div>
+				<div style="text-align: right;"><a href="../index.html">Cerrar Sesion</a></div>
 				<div><img src="../img/logo-min.png"></div>
 			</div>
 		</div>
@@ -33,29 +47,29 @@
 
 			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 				<div id="side-menu">
-					<a href="InfoGeneral.html">
+					<a href="InfoGeneral.html" data-toggle="tooltip" data-placement="top" title="Información General">
 						<div  id="menu-gral" class="side-menu-item">
 						</div>
 					</a>
-					<a href="normas.html">
+					<a href="normas.html" data-toggle="tooltip" data-placement="top" title="Normas">
 						<div id="menu-normas" class="side-menu-item">
 						</div>
 					</a>
-					<a href="auditorias.html">
+					<a href="auditorias.html" data-toggle="tooltip" data-placement="top" title="Auditorías">
 						<div id="menu-auditorias" class="side-menu-item">
 						</div>
 					</a>
-					<a href="reportes.html">
+					<a href="reportes.html" data-toggle="tooltip" data-placement="top" title="Reportes">
 						<div id="menu-reportes" class="side-menu-item">
 						</div>
 					</a>
-					<a href="usuarios.html">
+					<a href="usuarios.html" data-toggle="tooltip" data-placement="top" title="Usuarios">
 						<div id="menu-usuarios" class="side-menu-item">
 						</div>
 					</a>
 				</div>
 				<div id="side-menu-label" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-					<span class="glyphicon glyphicon-triangle-right"></span>
+					<span id="icon-triangle" class="glyphicon glyphicon-triangle-right"></span>
 				</div>
 			</div>
 

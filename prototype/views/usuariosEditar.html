@@ -9,7 +9,18 @@
     <link href="../css/masterPageStyles.css" rel="stylesheet">
     <link href="../css/editUserPageStyles.css" rel="stylesheet">
     <script type="text/javascript" src="../js/editUserScript.js"></script>
-    <title>Edit User</title>
+    <!--<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>-->
+    <script type="text/javascript">
+    	$(function(){
+    		/*$("#side-menu").animate({width:'toggle'},350);*/
+    		$("#side-menu-container").mouseenter(function(){
+    			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-right").addClass("glyphicon-triangle-left");
+    		}).mouseleave(function(){
+    			$(this).children("#side-menu-label").children("#icon-triangle").removeClass("glyphicon-triangle-left").addClass("glyphicon-triangle-right");
+    		});
+    	});
+    </script>
+    <title>Editar Usuario</title>
 </head>
 
 <body>
@@ -28,29 +39,29 @@
 
 			<div id="side-menu-container" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 				<div id="side-menu">
-					<a href="InfoGeneral.html">
-						<div id="menu-gral" class="side-menu-item">
+					<a href="InfoGeneral.html" data-toggle="tooltip" data-placement="top" title="Información General">
+						<div  id="menu-gral" class="side-menu-item">
 						</div>
 					</a>
-					<a href="normas.html">
+					<a href="normas.html" data-toggle="tooltip" data-placement="top" title="Normas">
 						<div id="menu-normas" class="side-menu-item">
 						</div>
 					</a>
-					<a href="auditorias.html">
+					<a href="auditorias.html" data-toggle="tooltip" data-placement="top" title="Auditorías">
 						<div id="menu-auditorias" class="side-menu-item">
 						</div>
 					</a>
-					<a href="reportes.html">
+					<a href="reportes.html" data-toggle="tooltip" data-placement="top" title="Reportes">
 						<div id="menu-reportes" class="side-menu-item">
 						</div>
 					</a>
-					<a href="usuarios.html">
+					<a href="usuarios.html" data-toggle="tooltip" data-placement="top" title="Usuarios">
 						<div id="menu-usuarios" class="side-menu-item">
 						</div>
 					</a>
 				</div>
 				<div id="side-menu-label" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-					<span class="glyphicon glyphicon-triangle-right"></span>
+					<span id="icon-triangle" class="glyphicon glyphicon-triangle-right"></span>
 				</div>
 			</div>
 
