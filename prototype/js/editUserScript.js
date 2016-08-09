@@ -17,6 +17,18 @@ function clickSearchButton()
 		tableR.rows[1].cells[1].innerHTML = "Av. Ruiz Cortinez 123";
 		tableR.rows[1].cells[2].innerHTML = "2281989898";
 		tableR.rows[1].cells[3].innerHTML = "ava@cmc.com";
+	}else{
+		tableR.rows[1].cells[0].innerHTML = "Chedraui S.A.";
+		user ="chedraui" 
+		tableR.rows[1].cells[1].innerHTML = "Av. Ruiz Cortinez 60";
+		tableR.rows[1].cells[2].innerHTML = "5581721732";
+		tableR.rows[1].cells[3].innerHTML = "chedraui@cuestamenos.com";
+
+		tableR.rows[2].cells[0].innerHTML = "Arturo Vazquez A";
+		user ="arturo" 
+		tableR.rows[2].cells[1].innerHTML = "Av. Ruiz Cortinez 123";
+		tableR.rows[2].cells[2].innerHTML = "2281989898";
+		tableR.rows[2].cells[3].innerHTML = "ava@cmc.com";
 	}
 }
 
